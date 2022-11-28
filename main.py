@@ -17,7 +17,7 @@ for k,v in MENU.items():
 
 while True:
     action = input('>_')
-    if action =='1':
+    if action == '1':
         pass
-    elif acrion=='exit':
+    elif action == 'exit':
         break
