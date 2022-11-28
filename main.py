@@ -1,4 +1,4 @@
-from Stud_csv import file_open, insert, show_rows
+from Stud_csv import file_open, insert, show_rows, save, drop_by_arg
 
 FILENAME = "Data.csv"
 
@@ -24,6 +24,11 @@ while True:
     elif action == '2':
         insert(input('фио: '), input('пол: '), input('возраст: '), input('телефон: '),
                input('почта: '), input('группа: '), input('курс: '))
+    elif action == '3':
+        print(drop_by_arg(input("Значение: "), input("Колонка: ")))
+
+    elif action == '7':
+        save(FILENAME)
 
     elif action == '8':
         show_rows()

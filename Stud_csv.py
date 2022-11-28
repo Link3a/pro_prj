@@ -26,6 +26,24 @@ def insert(num, fio, gen, age, tel, mail, group, cours):
         return f"Ошибка при добавлении новой записи {e}"
     print("Данные добавлены")
 
+# Удаление
+def drop_by_arg(val, col_name="фио"):
+    global csv_file
+    try:
+        cvs_file = list(filter(lambda x: x[col_name] != val, csv_file))
+    except Exception as e:
+        return f"Строка со значением {val} поля {col_name} не найдена"
+    return f"Строка со значением {val} поля {col_name} удалена!"
+
+# Функция Сохранить
+def save(fine_name):
+   with open(fine_name, 'w', encoding='utf-8', newline='') as file:
+        columns = ['ном', 'фио', 'пол', 'возраст', 'телефон', 'почта', 'группа', 'курс']
+        writer = csv.DictWriter(file, delimiter=";", fieldnames=columns)
+        writer.writeheader()
+        writer.writerows(csv_file)
+        print("Данные сохранены")
+
 
 # Вывод списка записей
 def show_rows():
