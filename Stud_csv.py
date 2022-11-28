@@ -33,8 +33,13 @@ def drop_by_arg(val, col_name="фио"):
         cvs_file = list(filter(lambda x: x[col_name] != val, csv_file))
     except Exception as e:
         return f"Строка со значением {val} поля {col_name} не найдена"
-    return f"Строка со значением {val} поля {col_name} удалена!"
-
+        return f"Строка со значением {val} поля {col_name} удалена!"
+# Поиск по фио
+def find(val, col_name='фио'):
+    print(*list(filter(lambda x: x[col_name] == val, csv_file)))
+# Поиск по группе
+def find(val, col_name='группа'):
+    print(*list(filter(lambda x: x[col_name] == val, csv_file)))
 # Функция Сохранить
 def save(fine_name):
    with open(fine_name, 'w', encoding='utf-8', newline='') as file:

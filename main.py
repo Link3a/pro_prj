@@ -1,4 +1,4 @@
-from Stud_csv import file_open, insert, show_rows, save, drop_by_arg
+from Stud_csv import file_open, insert, show_rows, save, drop_by_arg, find
 
 FILENAME = "Data.csv"
 
@@ -26,12 +26,16 @@ while True:
                input('почта: '), input('группа: '), input('курс: '))
     elif action == '3':
         print(drop_by_arg(input("Значение: "), input("Колонка: ")))
-
+    elif action == '4':
+        find(input("Значение: "), input("Колонка: "))
+    elif action == '5':
+        find(input("Значение: "), input("Колонка: "))
     elif action == '7':
         save(FILENAME)
-
     elif action == '8':
         show_rows()
-
+    elif action == '0':
+        for k, v in MENU.items():
+            print(k, '-', v)
     elif action == 'exit':
         break
