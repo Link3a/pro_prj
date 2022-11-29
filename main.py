@@ -30,6 +30,8 @@ while True:
         find(input("Значение: "), input("Колонка: "))
     elif action == '5':
         find(input("Значение: "), input("Колонка: "))
+    elif action == '6':
+        find(input("Значение: "), input("Колонка: "))
     elif action == '7':
         save(FILENAME)
     elif action == '8':

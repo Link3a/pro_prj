@@ -40,6 +40,9 @@ def find(val, col_name='фио'):
 # Поиск по группе
 def find(val, col_name='группа'):
     print(*list(filter(lambda x: x[col_name] == val, csv_file)))
+# Старше 18
+def find(val, col_name='возраст'):
+    print(*list(filter(lambda x: x[col_name] >= val, csv_file)))
 # Функция Сохранить
 def save(fine_name):
    with open(fine_name, 'w', encoding='utf-8', newline='') as file:
