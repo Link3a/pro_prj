@@ -11,7 +11,7 @@ def file_open(file_name):
         print("Файл открыт. Записей: ", len(csv_file))
 
 # Добавление
-def insert(num, fio, gen, age, tel, mail, group, cours):
+def insert(fio, gen, age, tel, mail, group, cours):
     try:
         mx = max(csv_file, key=lambda x: int(x['ном']))
         csv_file.append({'ном': int(mx['ном'])+1,
@@ -42,11 +42,11 @@ def find(val, col_name='группа'):
     print(*list(filter(lambda x: x[col_name] == val, csv_file)))
 # Старше 18
 def find(val, col_name='возраст'):
-    print(*list(filter(lambda x: x[col_name] >= val, csv_file)))
+    print(*list(filter(lambda x: x[col_name] > val, csv_file)))
 # Функция Сохранить
 def save(fine_name):
    with open(fine_name, 'w', encoding='utf-8', newline='') as file:
-        columns = ['ном', 'фио', 'пол', 'возраст', 'телефон', 'почта', 'группа', 'курс']
+        columns = ["ном", 'фио', 'пол', 'возраст', 'телефон', 'почта', 'группа', 'курс']
         writer = csv.DictWriter(file, delimiter=";", fieldnames=columns)
         writer.writeheader()
         writer.writerows(csv_file)
